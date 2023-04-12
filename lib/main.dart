@@ -120,8 +120,7 @@ class GetStartedPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(height: 20),
-              const SizedBox(height: 20),
+              const SizedBox(height: 40),
               SizedBox(
                 width: 238,
                 child: ElevatedButton(
