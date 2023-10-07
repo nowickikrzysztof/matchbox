@@ -1,25 +1,46 @@
 import 'package:flutter/material.dart';
 
 class MatchWidget extends StatelessWidget {
-  const MatchWidget(
-    this.title, {
-    Key? key,
-  }) : super(key: key);
+  final TextEditingController nameController;
+  final VoidCallback onNameSubmitted;
 
-  final String title;
+  const MatchWidget({
+    Key? key,
+    required this.nameController,
+    required this.onNameSubmitted,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      constraints: const BoxConstraints.expand(),
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage("images/bluematch.png"),
-        ),
+    return SizedBox(
+      height: 80,
+      child: Stack(
+        children: [
+          Image.asset(
+            'images/bluematch.png',
+            fit: BoxFit.contain,
+          ),
+          Positioned(
+            left: 82,
+            top: 9,
+            child: SizedBox(
+              height: 35,
+              width: 250,
+              child: TextField(
+                controller: nameController,
+                decoration: const InputDecoration(
+                  hintText: 'Match name',
+                  fillColor: Color.fromARGB(82, 255, 255, 255),
+                  filled: true,
+                ),
+                onSubmitted: (_) {
+                  onNameSubmitted();
+                },
+              ),
+            ),
+          ),
+        ],
       ),
-      padding: const EdgeInsets.all(20),
-      margin: const EdgeInsets.all(10),
-      child: Text(title),
     );
   }
 }

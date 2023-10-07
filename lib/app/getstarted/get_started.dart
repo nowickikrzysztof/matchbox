@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:matchbox/app/eachmatch/eachmatch_page.dart';
 import 'package:matchbox/app/pairspage/pairs_page.dart';
+import 'package:matchbox/app/pairspage/cubit/pairspage_cubit.dart';
 
 class GetStartedPage extends StatelessWidget {
   const GetStartedPage({
@@ -13,8 +15,9 @@ class GetStartedPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text('MatchBox'),
-      ),
+          title: const Text('MatchBox'),
+          foregroundColor: Colors.black,
+          backgroundColor: const Color.fromARGB(178, 18, 97, 176)),
       body: Container(
         constraints: const BoxConstraints.expand(),
         decoration: const BoxDecoration(
@@ -40,7 +43,7 @@ class GetStartedPage extends StatelessWidget {
                   ),
                   onPressed: () {
                     Navigator.of(context).push(MaterialPageRoute(
-                      builder: (_) => const PairsPage(),
+                      builder: (_) => PairsPage(pairsCubit: PairspageCubit()),
                     ));
                   },
                   child: Text(
@@ -62,7 +65,11 @@ class GetStartedPage extends StatelessWidget {
                     ),
                     elevation: 5.0,
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (_) => const EachMatchPage(),
+                    ));
+                  },
                   child: Text(
                     'Match each match a match',
                     style: GoogleFonts.anton(fontSize: 32),

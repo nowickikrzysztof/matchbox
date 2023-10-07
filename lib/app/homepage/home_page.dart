@@ -11,9 +11,6 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('MatchBox'),
-      ),
       backgroundColor: const Color.fromARGB(255, 170, 170, 170),
       body: Center(
         child: Column(
