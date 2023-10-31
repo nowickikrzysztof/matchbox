@@ -19,16 +19,35 @@ class PairsResultPage extends StatelessWidget {
         backgroundColor: const Color.fromARGB(178, 18, 97, 176),
       ),
       backgroundColor: const Color.fromARGB(255, 170, 170, 170),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            for (final pairs in randomNamesPairs) ...[
-              for (final name in pairs) Text(name),
-              const SizedBox(height: 20),
-            ]
-          ],
-        ),
+      body: ListView(
+        children: [
+          Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                for (final pairs in randomNamesPairs) ...[
+                  Stack(
+                    children: [
+                      Image.asset(
+                        'images/bluematches.png',
+                        height: 100,
+                      ),
+                      Positioned(
+                        left: 82,
+                        top: 50,
+                        child: Column(
+                          children: [
+                            for (final name in pairs) Text(name),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }

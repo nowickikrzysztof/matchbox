@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:matchbox/app/pairspage/pairsresult_page.dart';
+import 'package:matchbox/app/pairsresultpage/pairsresult_page.dart';
 import 'package:matchbox/app/matchwidget/match_widget.dart';
 import 'package:matchbox/app/pairspage/cubit/pairspage_cubit.dart';
 
